@@ -5,4 +5,8 @@ class TrimmerDecorator < BaseDecorator
         super()
         @nameable   = nameable
     end
+
+  def correct_name
+    super[0..9]
+  end
 end
