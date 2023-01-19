@@ -3,7 +3,7 @@ require './nameable'
 class Person
   attr_accessor :name, :age, :id
 
-  def initialize(age, id, name = 'unknown', parent_permission: true)
+  def initialize(id, age, name = 'unknown', parent_permission: true)
     super()
     @id = id
     @age = age
@@ -24,6 +24,4 @@ class Person
   def correct_name
     @name
   end 
-
-
 end
