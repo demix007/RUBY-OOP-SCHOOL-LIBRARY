@@ -20,4 +20,10 @@ class Person
   def can_use_service?
     @age >= 18 || parent_permission == true
   end
+
+  def correct_name
+    @name
+  end 
+
+
 end
