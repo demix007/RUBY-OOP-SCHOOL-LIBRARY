@@ -6,7 +6,6 @@ require './classroom'
 require './nameable'
 require './person'
 
-
 class App
   def initialize
     @book_list = []
