@@ -67,13 +67,45 @@ class App
         puts 'New teacher was successfully created'
     end
 
-    def create_book
+    def create_a_book
         puts 'Title: '
         book_title = gets.chomp
         print 'Author: '
         book_author = gets.chomp
         puts 'New Book was successfully created'
-        book = Book.new(bookt_title, book_author)
-        @list_books.push(book)
+        book = Book.new(book_title, book_author)
+        @book_list.push(book)
+        puts 'New Book was successfully created'
+    end
+
+    def create_a_rental
+        puts 'Enter the date in this format (yyyy/dd/mm)'
+        date = gets.chomp
+        puts 'Select a book to rent from the list of books:'
+        @book_list.each_with_index { |book, i| puts "#{i}) #{book.title} written by #{book.author}" }
+        bookid = gets.chomp.to_i
+        book = @book_list[bookid]
+        puts 'Select a person making the rental from the list of people:'
+        @people_list.each_with_index { |person, i| puts "#{i}) #{person.name}" }
+        personid = gets.chomp.to_i
+        person = @people_list[personid]
+        rental = Rental.new(date, book, person)
+        @rental_list.push(rental)    
+    end
+
+    def list_rentals_by_id
+        if @list_rentals.empty?
+          puts 'Please add a book.'
+        else
+          print 'ID of person: '
+          id = gets.chomp.to_i
+          puts 'Rentals: '
+          @list_rentals.each do |n|
+            if n.person.id == id
+              puts "Date: #{n.date}, Book: \"#{n.book.title}\" by #{n.book.author} "
+            else
+              puts 'No rentals matched that id'
+            end
+        end
     end
 end
