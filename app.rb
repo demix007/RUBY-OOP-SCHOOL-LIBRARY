@@ -40,4 +40,17 @@ class App
           create_a_teacher
         end
     end
+
+    def create_a_student
+        puts 'Name:'
+        name = gets.chomp
+        puts 'Age:'
+        age = gets.chomp
+        puts 'permission:'
+        parent_permission = gets.chomp
+        puts 'classroom:'
+        clasroom = gets.chomp
+        new_student = Student.new(name, age, parent_permission, classroom)
+        @people_list.push(new_student)
+    end
 end
