@@ -29,4 +29,15 @@ class App
           end
         end
     end
+
+    def create_a_person
+        puts 'Enter (1) to create a student || Enter (2) to create a teacher'
+        user_input = gets.chomp.to_i
+        case user_input
+        when 1
+          create_a_student
+        when 2
+          create_a_teacher
+        end
+    end
 end
