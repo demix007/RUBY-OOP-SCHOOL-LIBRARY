@@ -1,40 +1,49 @@
 require './app'
-# rubocop:disable Metrics/CyclomaticComplexity
+
 def main
-  app = App.new
+  @app = App.new
 
-  response = nil
+  books = []
+  rental_details = []
+  people = []
 
-  puts "Welcome to School Library App!\n\n"
-  while response != '7'
-    puts 'Please choose an option by entering a number:'
-    puts '1 - List all books'
-    puts '2 - List all people'
-    puts '3 - Create a person'
-    puts '4 - Create a book'
-    puts '5 - Create a rental'
-    puts '6 - List all rental for a given id'
-    puts '7 - Exit'
-    response = gets.chomp
+  options(books, people, rental_details)
+end
 
-    case response
-    when '1'
-      app.list_of_people
-    when '2'
-      app.list_of_books
-    when '3'
-      app.create_a_person
-    when '4'
-      app.create_a_book
-    when '5'
-      app.create_a_rental
-    when '6'
-      app.list_rental_by_id
-    when '7'
-      # *Have a way to quit the app.
-      puts 'Thank you for using this app!'
+def display_all
+  puts 'Welcome To The School Library Application'
+  puts ' Please choose an action you want to perform'
+  puts "
+    1: List all books.
+    2: List all people.
+    3: Create a person(Teacher or Student)
+    4: Create a book
+    5: Create a rental
+    6: List all rentals for a given person ID
+    7: Exit School Library Application
+    "
+end
+
+def options(*)
+  loop do
+    display_all
+    option = gets.chomp.to_i
+    case option
+    when 1
+      @app.list_of_people
+    when 2
+      @app.list_of_books
+    when 3
+      @app.create_a_person
+    when 4
+      @app.create_a_book
+    when 5
+      @app.create_a_rental
+    when 6
+      @app.list_rental_by_id
+    else
+      break
     end
-    puts "\n"
   end
 end
 

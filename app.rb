@@ -54,7 +54,7 @@ class App
     age = gets.chomp
     puts 'permission:'
     parent_permission = gets.chomp
-    new_student = Student.new(classroom, age, name, parent_permission)
+    new_student = Student.new(name, age, classroom, parent_permission)
     @people_list.push(new_student)
     puts 'New student was successfully created'
   end
@@ -115,5 +115,5 @@ class App
 end
 
 book = App.new
-#puts book.create_a_book
+# puts book.create_a_book
 puts book.list_rental_by_id
