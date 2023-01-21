@@ -65,5 +65,15 @@ class App
         new_teacher = Teacher.new(name, age, specialization)
         @people_list.push(new_teacher)
         puts 'New teacher was successfully created'
-      end
+    end
+
+    def create_book
+        puts 'Title: '
+        book_title = gets.chomp
+        print 'Author: '
+        book_author = gets.chomp
+        puts 'New Book was successfully created'
+        book = Book.new(bookt_title, book_author)
+        @list_books.push(book)
+    end
 end
