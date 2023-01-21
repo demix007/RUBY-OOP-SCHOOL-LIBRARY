@@ -52,5 +52,18 @@ class App
         clasroom = gets.chomp
         new_student = Student.new(name, age, parent_permission, classroom)
         @people_list.push(new_student)
+        puts 'New student was successfully created'
     end
+
+    def create_a_teacher
+        puts 'Name:'
+        name = gets.chomp
+        puts 'Age:'
+        age = gets.chomp
+        puts 'specialization:'
+        specialization = gets.chomp
+        new_teacher = Teacher.new(name, age, specialization)
+        @people_list.push(new_teacher)
+        puts 'New teacher was successfully created'
+      end
 end
