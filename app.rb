@@ -149,7 +149,3 @@ class App
     end
   end
 end
-
-book = App.new
-# puts book.create_a_book
-puts book.list_rental_by_id
