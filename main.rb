@@ -12,5 +12,5 @@ class Main
 end
 
 start = Main.new
- 
+
 start.main
