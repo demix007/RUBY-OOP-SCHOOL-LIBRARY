@@ -132,9 +132,9 @@ class App
       option = gets.chomp.to_i
       case option
       when 1
-        list_of_people
-      when 2
         list_of_books
+      when 2
+        list_of_people
       when 3
         create_a_person
       when 4
